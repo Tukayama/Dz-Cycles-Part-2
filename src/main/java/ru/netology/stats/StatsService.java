@@ -69,32 +69,22 @@ public class StatsService {
 
     public int monthsAmountWithSalesHigherAverage(int[] seles) {
         int month = 0;
-
         for (int i = 0; i < seles.length; i++) {
-            if (seles[i]  >findAvd(seles)) {
-
+            if (seles[i] > calculateSum(seles) / seles.length) {
                 month = month + 1;
-
             }
-
         }
         return month;
+    }
 
-
-    } public int monthsWithBelowAverageSales(int[] seles) {
+    public int monthsWithBelowAverageSales(int[] seles) {
         int month = 0;
-
         for (int i = 0; i < seles.length; i++) {
-            if (seles[i] < findAvd(seles)) {
-
+            if (seles[i] < calculateSum(seles) / seles.length) {
                 month = month + 1;
-
             }
-
         }
         return month;
-
-
     }
 }
 
