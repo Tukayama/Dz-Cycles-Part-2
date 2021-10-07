@@ -10,7 +10,9 @@ public class StatsService {
     }
 
     public int findAvd(int[] seles) {
-        return calculateSum(seles) / seles.length;
+        int averageСost = calculateSum(seles) / seles.length;
+        return averageСost;
+
     }
 
     public int findMaxSale(int[] seles) {
@@ -70,7 +72,8 @@ public class StatsService {
     public int monthsAmountWithSalesHigherAverage(int[] seles) {
         int month = 0;
         for (int i = 0; i < seles.length; i++) {
-            if (seles[i] > calculateSum(seles) / seles.length) {
+            int averageAmount = findAvd(seles);
+            if (seles[i] > averageAmount) {
                 month = month + 1;
             }
         }
@@ -80,7 +83,8 @@ public class StatsService {
     public int monthsWithBelowAverageSales(int[] seles) {
         int month = 0;
         for (int i = 0; i < seles.length; i++) {
-            if (seles[i] < calculateSum(seles) / seles.length) {
+            int averageAmount = findAvd(seles);
+            if (seles[i] < averageAmount) {
                 month = month + 1;
             }
         }
