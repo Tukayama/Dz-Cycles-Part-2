@@ -71,8 +71,9 @@ public class StatsService {
 
     public int monthsAmountWithSalesHigherAverage(int[] seles) {
         int month = 0;
+        int averageAmount = findAvd(seles);
         for (int i = 0; i < seles.length; i++) {
-            int averageAmount = findAvd(seles);
+
             if (seles[i] > averageAmount) {
                 month = month + 1;
             }
@@ -82,8 +83,9 @@ public class StatsService {
 
     public int monthsWithBelowAverageSales(int[] seles) {
         int month = 0;
+        int averageAmount = findAvd(seles);
         for (int i = 0; i < seles.length; i++) {
-            int averageAmount = findAvd(seles);
+
             if (seles[i] < averageAmount) {
                 month = month + 1;
             }
